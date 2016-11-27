@@ -148,7 +148,7 @@ class VolumeTest extends \Orchestra\Testbench\TestCase {
 	public function testConvertOneLitreToUSOunces() {
 		$value    = 1;
 		$volume   = Volume::createFromLitres($value);
-		$expected = number_format(0.033814, 6);
+		$expected = number_format(33.814, 6);
 		$result   = number_format($volume->toUSOunces(), 6);
 		$this->assertEquals($expected, $result, "Error converting from {$value} Litres to US Ounces, expected {$expected}, but got {$result}");
 	}
@@ -156,43 +156,25 @@ class VolumeTest extends \Orchestra\Testbench\TestCase {
 	public function testConvertOneLitreToImperialGallons() {
 		$value    = 1;
 		$volume   = Volume::createFromLitres($value);
-		$expected = 0.0002199692482991;
-		$result   = $volume->toImperialGallons();
+		$expected = number_format(0.2199692482991, 6);
+		$result   = number_format($volume->toImperialGallons(), 6);
 		$this->assertEquals($expected, $result, "Error converting from {$value} Litres to Imperial Gallons, expected {$expected}, but got {$result}");
 	}
 
 	public function testConvertOneLitreToUSLiquidGallons() {
 		$value    = 1;
 		$volume   = Volume::createFromLitres($value);
-		$expected = 0.00026417;
-		$result   = $volume->toUSLiquidGallons();
+		$expected = number_format(0.26417, 6);
+		$result   = number_format($volume->toUSLiquidGallons(), 6);
 		$this->assertEquals($expected, $result, "Error converting from {$value} Litres to US Liquid Gallons, expected {$expected}, but got {$result}");
 	}
 
 	public function testConvertOneLitreToUSDryGallons() {
 		$value    = 1;
 		$volume   = Volume::createFromLitres($value);
-		$expected = 0.00022702;
-		$result   = $volume->toUSDryGallons();
+		$expected = number_format(0.22702, 6);
+		$result   = number_format($volume->toUSDryGallons(), 6);
 		$this->assertEquals($expected, $result, "Error converting from {$value} Litres to US Dry Gallons, expected {$expected}, but got {$result}");
 	}
 
 }
-
-/*
-	$volume = Volume::createFromMillilitres(1000);
-	$volume = Volume::createFromLitres(1);
-	$volume = Volume::createFromImperialOunces(35.195);
-	$volume = Volume::createFromUSOunces(33.814);
-	$volume = Volume::createFromImperialGallons(0.21997);
-	$volume = Volume::createFromUSLiquidGallons(0.26417);
-	$volume = Volume::createFromUSDryGallons(0.22702);
-	echo '<pre>';
-	echo '     Millilitres: ', $volume->toMillilitres(), '<br>';
-	echo '          Litres: ', $volume->toLitres(), '<br>';
-	echo '       Imperial Ounces: ', $volume->toImperialOunces(), '<br>';
-	echo '      Imperial Gallons: ', $volume->toImperialGallons(), '<br>',
-	'<br>';
-	echo '       US Ounces: ', $volume->toUSOunces(), '<br>';
-	echo '   US Dry Gallons: ', $volume->toUSDryGallons(), '<br>';
-	echo 'US Liquid Gallons: ', $volume->toUSLiquidGallons(), '<br>'; */
