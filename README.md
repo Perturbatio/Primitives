@@ -12,5 +12,18 @@ Currently available primitives:
 
 TODO:
 
-1. examples
+1. many more examples
 2. More tests
+3. Create formatter methods for each of the classes
+
+## Examples
+
+Examples for each Type can be found in the `/examples` folder
+
+### Simple weight conversion
+
+```PHP
+$productWeight = Mass::createFromGrams(1600);
+
+echo 'Product weight: ', number_format($productWeight->toKilograms(), 2), "kg \n";
+```
