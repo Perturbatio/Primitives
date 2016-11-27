@@ -18,10 +18,9 @@ class Volume {
 	 */
 	private $value;
 
-	const UK_FLOZ_IN_ML = 0.035195;
+	const IMPERIAL_FLOZ_IN_ML = 0.035195080;
 	const US_FLOZ_IN_ML = 0.033814;
-
-	const UK_GALLONS_IN_ML = 0.00021997;
+	const IMPERIAL_GALLONS_IN_ML = 0.0002199692482991;
 	const US_GALLONS_LIQUID_IN_ML = 0.00026417;
 	const US_GALLONS_DRY_IN_ML = 0.00022702;
 
@@ -70,9 +69,9 @@ class Volume {
 	 *
 	 * @return Volume
 	 */
-	public static function createFromUKOunces($value) {
+	public static function createFromImperialOunces($value) {
 		$value = (float)$value;
-		return static::createFromMillilitres($value / self::UK_FLOZ_IN_ML);
+		return static::createFromMillilitres($value / self::IMPERIAL_FLOZ_IN_ML);
 	}
 
 	/**
@@ -80,10 +79,10 @@ class Volume {
 	 *
 	 * @return Volume
 	 */
-	public static function createFromUKGallons( $value ) {
+	public static function createFromImperialGallons( $value ) {
 		$value = (float) $value;
 
-		return static::createFromMillilitres($value / self::UK_GALLONS_IN_ML);
+		return static::createFromMillilitres($value / self::IMPERIAL_GALLONS_IN_ML);
 	}
 
 	/**
@@ -124,8 +123,8 @@ class Volume {
 	/**
 	 * @return float
 	 */
-	public function toUKOunces() {
-		return $this->value * static::UK_FLOZ_IN_ML;
+	public function toImperialOunces() {
+		return $this->value * static::IMPERIAL_FLOZ_IN_ML;
 	}
 
 	/**
@@ -138,8 +137,8 @@ class Volume {
 	/**
 	 * @return float
 	 */
-	public function toUKGallons() {
-		return $this->value * static::UK_GALLONS_IN_ML;
+	public function toImperialGallons() {
+		return $this->value * static::IMPERIAL_GALLONS_IN_ML;
 	}
 
 	/**
