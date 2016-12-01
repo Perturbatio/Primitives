@@ -4,7 +4,7 @@
  * Date: 27/11/2016
  * Time: 17:38
  */
-require_once ('../vendor/autoload.php');
+require_once ('../../vendor/autoload.php');
 
 use Perturbatio\Primitives\Mass;
 
